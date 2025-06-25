@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Saeko</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #e3f0ff;
+    }
+
+    .encabezado {
+      background-color: #e3f0ff;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    .titulo {
+      font-size: 32px;
+      font-weight: bold;
+      color: #003366;
+      margin-bottom: 20px;
+    }
+
+    .menu-desplegables {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .menu-desplegables select {
+      background-color: #3B83BD;
+      color: white;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #3B83BD;
+      font-size: 16px;
+      min-width: 150px;
+      cursor: pointer;
+    }
+
+    .contenido {
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .contenido p {
+      font-size: 18px;
+      line-height: 1.6;
+      color: #333;
+      max-width: 800px;
+      margin: 0 auto 40px;
+    }
+
+    .imagen-cambio {
+      display: block;
+      margin: 0 auto 40px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      width: 500px;
+      height: 400px;
+      object-fit: cover;
+    }
+
+    .boton {
+      background-color: #003366;
+      color: white;
+      padding: 12px 25px;
+      text-decoration: none;
+      font-size: 16px;
+      border-radius: 8px;
+      transition: background-color 0.3s ease;
+    }
+
+    .boton:hover {
+      background-color: #0055aa;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ENCABEZADO -->
+  <div class="encabezado">
+    <div class="titulo">Bienvenido a Saeko</div>
+
+    <div class="menu-desplegables">
+      <select onchange="if(this.value) window.location.href=this.value;">
+    <option value="">Menú</option>
+    <option value="historia.html">Historia</option>
+    <option value="contacto.html">Contacto</option>
+    <option value="formulario.html">Formulario</option>
+  </select>
+    </div>
+  </div>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <div class="contenido">
+    <p>
+      Saeko es un sistema de gestión escolar en línea que organiza la información
+      de las instituciones educativas y automatiza diversos procesos, como control
+      escolar, finanzas y operaciones. Facilita la comunicación entre alumnos, profesores,
+      administrativos y padres, ofreciendo portales para cada uno de estos perfiles.
+    </p>
+
+    <img id="imagen" src="logo.jpg" class="imagen-cambio" alt="Imagen dinámica">
+
+    <a href="https://www.saeko.io" class="boton" target="_blank">Visita la página oficial</a>
+  </div>
+
+  <!-- SCRIPT para cambio de imágenes -->
+  <script>
+    const imagenes = ["logo.jpg", "uno.jpg", "dos.jpg"];
+    let indice = 0;
+    const imagen = document.getElementById("imagen");
+
+    function cambiarImagen() {
+      indice = (indice + 1) % imagenes.length;
+      imagen.src = imagenes[indice];
+    }
+
+    setInterval(cambiarImagen, 3000);
+  </script>
+</body>
+</html>

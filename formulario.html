@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Formulario de Registro</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #e3f0ff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .formulario {
+      background-color: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      width: 300px;
+      text-align: center;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      color: #003366;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    .botones {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    button {
+      flex: 1;
+      padding: 10px;
+      border: none;
+      border-radius: 8px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .registrar {
+      background-color: #003366;
+      color: white;
+    }
+
+    .registrar:hover {
+      background-color: #0055aa;
+    }
+
+    .salir {
+      background-color: #ccc;
+      color: #333;
+    }
+
+    .salir:hover {
+      background-color: #aaa;
+    }
+  </style>
+</head>
+<body>
+
+  <form class="formulario" action="registrar.php" method="POST">
+    <h2>Registro</h2>
+
+    <input type="email" name="correo" placeholder="Correo electrónico" required>
+    <input type="text" name="escuela" placeholder="Nombre de la escuela" required>
+    <input type="password" name="contrasena" placeholder="Contraseña" required>
+    <input type="text" name="nombre" placeholder="Tu nombre" required>
+
+    <div class="botones">
+      <button type="submit" class="registrar">Registrarse</button>
+      <button type="button" class="salir" onclick="window.location.href='index.html'">Salir</button>
+    </div>
+  </form>
+</body>
+</html>
